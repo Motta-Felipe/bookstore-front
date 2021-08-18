@@ -3,7 +3,7 @@
     <h1>Category</h1>
   </div>
 
-  <button class="mat-elevation-z8" mat-stroked-button >New Category</button>
+  <button class="mat-elevation-z8" (click)="goToCreateCategory()" mat-stroked-button >New Category</button>
 
   <div class="content-table mat-elevation-z8">
     <table class="table" mat-table [dataSource]="categories">

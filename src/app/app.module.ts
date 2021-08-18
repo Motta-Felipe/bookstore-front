@@ -13,17 +13,29 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from "@angular/material/list";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
-import {MatTableModule} from '@angular/material/table';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { MatTableModule } from "@angular/material/table";
+import { MatButtonModule } from "@angular/material/button";
+import { MatCardModule } from "@angular/material/card";
+import { FormsModule } from "@angular/forms";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
-import { HomeComponent } from './components/views/home/home.component';
-import { ReadCategoryComponent } from './components/views/category/read-category/read-category.component';
 
-
+import { HomeComponent } from "./components/views/home/home.component";
+import { ReadCategoryComponent } from "./components/views/category/read-category/read-category.component";
+import { CreateCategoryComponent } from "./components/views/category/create-category/create-category.component";
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, NavComponent, HomeComponent, ReadCategoryComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavComponent,
+    HomeComponent,
+    ReadCategoryComponent,
+    CreateCategoryComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,6 +48,10 @@ import { ReadCategoryComponent } from './components/views/category/read-category
     MatTableModule,
     HttpClientModule,
     MatButtonModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
