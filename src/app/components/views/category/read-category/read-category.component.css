@@ -8,6 +8,36 @@
     margin-bottom: 3rem;
 }
 
+.title h1{
+    font-size: 2rem;
+    color: rgb(212, 207, 207);
+    font-weight: 500;
+}
+
+button {
+    margin-bottom: .8rem;
+    color: royalblue;
+
+}
+
 .table {
     width: 100%;
+}
+
+.books{
+    color:rgb(90, 124, 236)
+}
+
+
+.edit{
+    color: rgb(206, 173, 24);
+}
+
+.delete{
+    color: rgb(216, 29, 29);
+    margin-left: .5rem;
+}
+
+.mat-header{
+    width: 5rem;
 }
