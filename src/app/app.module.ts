@@ -25,6 +25,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HomeComponent } from "./components/views/home/home.component";
 import { ReadCategoryComponent } from "./components/views/category/read-category/read-category.component";
 import { CreateCategoryComponent } from "./components/views/category/create-category/create-category.component";
+import { DeleteCategoryComponent } from './components/views/category/delete-category/delete-category.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { CreateCategoryComponent } from "./components/views/category/create-cate
     HomeComponent,
     ReadCategoryComponent,
     CreateCategoryComponent,
+    DeleteCategoryComponent,
   ],
   imports: [
     BrowserModule,
