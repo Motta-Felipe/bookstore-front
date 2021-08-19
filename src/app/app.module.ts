@@ -26,6 +26,7 @@ import { HomeComponent } from "./components/views/home/home.component";
 import { ReadCategoryComponent } from "./components/views/category/read-category/read-category.component";
 import { CreateCategoryComponent } from "./components/views/category/create-category/create-category.component";
 import { DeleteCategoryComponent } from './components/views/category/delete-category/delete-category.component';
+import { UpdateCategoryComponent } from './components/views/category/update-category/update-category.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { DeleteCategoryComponent } from './components/views/category/delete-cate
     ReadCategoryComponent,
     CreateCategoryComponent,
     DeleteCategoryComponent,
+    UpdateCategoryComponent,
   ],
   imports: [
     BrowserModule,
