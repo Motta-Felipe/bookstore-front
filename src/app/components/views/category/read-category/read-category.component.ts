@@ -30,7 +30,6 @@ export class ReadCategoryComponent implements OnInit {
 
   goToCreateCategory(){
     this.router.navigate(["categories/create"])
-
   }
 
 

@@ -24,6 +24,10 @@ export class BookService {
     return this.http.get<Book[]>(url)
   }
 
+  create(book: Book, id_cat: String): Observable<Book>{
+    const url = `${this.baseUrl}books?category=${id_cat}`
+    return this.http.post<Book>(url, book);
+  }
 
 
 

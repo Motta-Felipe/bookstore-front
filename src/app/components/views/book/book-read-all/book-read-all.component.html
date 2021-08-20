@@ -3,7 +3,7 @@
       <h1>Books</h1>
     </div>
   
-    <button class="mat-elevation-z8" mat-stroked-button >New Book</button>
+    <button class="mat-elevation-z8" (click)="goToCreateBook()" mat-stroked-button >New Book</button>
   
     <div class="content-table mat-elevation-z8">
       <table class="table" mat-table [dataSource]="books">
