@@ -17,7 +17,9 @@ export class UpdateBookComponent implements OnInit {
     text: ''
   }
 
-  id_cat: String = "";
+  id_cat: String = ""; 
+
+  //################## Form Validators ##################
   title = new FormControl('', [Validators.minLength(3)])
   name_author = new FormControl('', [Validators.minLength(3)])
   text = new FormControl('', [Validators.minLength(10)])
@@ -28,6 +30,10 @@ export class UpdateBookComponent implements OnInit {
     this.id_cat = this.route.snapshot.paramMap.get('id_cat')!;
     this.book.id = this.route.snapshot.paramMap.get('id')!;
     this.findById();
+  }
+
+  cancel(): void {
+    this.router.navigate([`categories/${this.id_cat}/books`])
   }
 
   findById(): void {
@@ -46,10 +52,6 @@ export class UpdateBookComponent implements OnInit {
         this.service.message(err.error.errors[i].message)
       }
     })
-  }
-
-  cancel(): void {
-    this.router.navigate([`categories/${this.id_cat}/books`])
   }
 
   //#########VALIDATION MESSAGES#######
