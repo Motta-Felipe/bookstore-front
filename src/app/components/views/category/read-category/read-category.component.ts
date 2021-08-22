@@ -28,7 +28,7 @@ export class ReadCategoryComponent implements OnInit {
     })
   }
 
-  goToCreateCategory(){
+  goToCreateCategory() {
     this.router.navigate(["categories/create"])
   }
 

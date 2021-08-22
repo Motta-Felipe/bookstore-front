@@ -45,6 +45,6 @@ export class CategoryService {
     verticalPosition:`top`,
     duration: 3000
   })
-    
   }
+  
 }

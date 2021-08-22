@@ -11,28 +11,38 @@ import { BookService } from '../book.service';
 })
 export class CreateBookComponent implements OnInit {
   book: Book = {
-    title:'',
-    author_name:'',
-    text:''
+    title: '',
+    name_author: '',
+    text: ''
   }
-  id_cat: String = "";
 
+  id_cat: String = "";
   title = new FormControl('', [Validators.minLength(3)])
   name_author = new FormControl('', [Validators.minLength(3)])
   text = new FormControl('', [Validators.minLength(10)])
 
-
-  constructor(private service: BookService, private route:ActivatedRoute) { }
+  constructor(private service: BookService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.id_cat = this.route.snapshot.paramMap.get('id_cat')!;
   }
 
-  create():void{
-    this.service.create(this.book, this.id_cat)
+  create(): void {
+    this.service.create(this.book, this.id_cat).subscribe((response) => {
+      this.router.navigate([`categories/${this.id_cat}/books`])
+      this.service.message("The book was created successfully");
+    }, err => {
+      this.router.navigate([`categories/${this.id_cat}/books`])
+      for (let i = 0; i < err.error.errors.length; i++) {
+        this.service.message(err.error.errors[i].message)
+      }
+    })
   }
 
-  getMessage(field: string){
+  //#########VALIDATION MESSAGES#######
+  getMessage(field: string) {
+    let anyInvalid = this.title.invalid || this.text.invalid || this.name_author.invalid;
+
     if (this.title.invalid && field == "title") {
       return "The title field must have between 3 and 100 characters";
     }
@@ -45,10 +55,10 @@ export class CreateBookComponent implements OnInit {
       return "The text field must have between 10 and 2.000.000 characters";
     }
 
+    if (anyInvalid && field == "button") {
+      return true;
+    }
     return false
   }
-
-
-
 
 }

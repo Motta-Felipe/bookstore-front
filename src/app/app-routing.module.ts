@@ -10,34 +10,34 @@ import { HomeComponent } from './components/views/home/home.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:HomeComponent
+    path: '',
+    component: HomeComponent
   },
   {
-    path:'categories',
-    component:ReadCategoryComponent
+    path: 'categories',
+    component: ReadCategoryComponent
   },
   {
-    path:'categories/create',
-    component:CreateCategoryComponent
+    path: 'categories/create',
+    component: CreateCategoryComponent
   },
   {
-    path:'categories/delete/:id',
-    component:DeleteCategoryComponent
+    path: 'categories/delete/:id',
+    component: DeleteCategoryComponent
   },
   {
-    path:'categories/update/:id',
-    component:UpdateCategoryComponent
+    path: 'categories/update/:id',
+    component: UpdateCategoryComponent
   },
   {
-    path:'categories/:id_cat/books',
-    component:BookReadAllComponent
+    path: 'categories/:id_cat/books',
+    component: BookReadAllComponent
   },
   {
-    path:'categories/:id_cat/books/create',
-    component:CreateBookComponent
+    path: 'categories/:id_cat/books/create',
+    component: CreateBookComponent
   }
-  
+
 ];
 
 @NgModule({

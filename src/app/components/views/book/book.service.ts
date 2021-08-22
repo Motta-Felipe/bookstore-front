@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Book } from './book.model';
@@ -11,7 +12,7 @@ export class BookService {
 
   baseUrl: String = environment.baseUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
   //All books, not used yed
   findAll():Observable<Book[]>{
@@ -29,6 +30,12 @@ export class BookService {
     return this.http.post<Book>(url, book);
   }
 
-
-
+  message(str: String): void {
+    this._snack.open(`${str}`, `Ok`, {
+      horizontalPosition: `end`,
+      verticalPosition: `top`,
+      duration: 3000
+    })
+  }
+  
 }

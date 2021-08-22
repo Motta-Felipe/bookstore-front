@@ -14,7 +14,6 @@ export class CreateCategoryComponent implements OnInit {
     description:''
   }
 
-
   constructor(private service: CategoryService, private router: Router) { }
 
   ngOnInit(): void {
@@ -34,6 +33,5 @@ export class CreateCategoryComponent implements OnInit {
   cancel():void{
     this.router.navigate(['categories'])
   }
-
 
 }
