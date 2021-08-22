@@ -8,26 +8,36 @@ import { Book } from './book.model';
 @Injectable({
   providedIn: 'root'
 })
-export class BookService {
 
+export class BookService {
   baseUrl: String = environment.baseUrl;
 
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
   //All books, not used yed
-  findAll():Observable<Book[]>{
+  findAll(): Observable<Book[]> {
     const url = `${this.baseUrl}/books`
     return this.http.get<Book[]>(url)
   }
 
-  findAllByCategory(id_cat:String): Observable<Book[]>{
+  findAllByCategory(id_cat: String): Observable<Book[]> {
     const url = `${this.baseUrl}books/category/${id_cat}`
     return this.http.get<Book[]>(url)
   }
 
-  create(book: Book, id_cat: String): Observable<Book>{
+  findById(id: String): Observable<Book> {
+    const url = `${this.baseUrl}/books/${id}`
+    return this.http.get<Book>(url)
+  }
+
+  create(book: Book, id_cat: String): Observable<Book> {
     const url = `${this.baseUrl}books?category=${id_cat}`
     return this.http.post<Book>(url, book);
+  }
+
+  update(book: Book): Observable<Book> {
+    const url = `${this.baseUrl}/books/${book.id}`
+    return this.http.put<Book>(url, book)
   }
 
   message(str: String): void {
@@ -37,5 +47,5 @@ export class BookService {
       duration: 3000
     })
   }
-  
+
 }

@@ -33,6 +33,7 @@ import { DeleteCategoryComponent } from './components/views/category/delete-cate
 import { UpdateCategoryComponent } from './components/views/category/update-category/update-category.component';
 import { BookReadAllComponent } from './components/views/book/book-read-all/book-read-all.component';
 import { CreateBookComponent } from './components/views/book/create-book/create-book.component';
+import { UpdateBookComponent } from './components/views/book/update-book/update-book.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { CreateBookComponent } from './components/views/book/create-book/create-
     UpdateCategoryComponent,
     BookReadAllComponent,
     CreateBookComponent,
+    UpdateBookComponent,
   ],
   imports: [
     BrowserModule,

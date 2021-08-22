@@ -19,7 +19,7 @@ export class UpdateCategoryComponent implements OnInit {
     private service: CategoryService,
     private route: ActivatedRoute,
     private router: Router,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.category.id = this.route.snapshot.paramMap.get("id")!;
@@ -28,12 +28,11 @@ export class UpdateCategoryComponent implements OnInit {
 
   findById() {
     this.service.findById(this.category.id!).subscribe((response) => {
-      this.category.name = response.name;
-      this.category.description = response.description;
+      this.category = response;
     });
   }
 
-  update():void {
+  update(): void {
     this.service.update(this.category).subscribe((response) => {
       this.router.navigate(['categories'])
       this.service.message('Category update Successfully')
@@ -41,8 +40,8 @@ export class UpdateCategoryComponent implements OnInit {
     }, err => {
       this.service.message('Verify that all fields are filled correctly')
     })
-}
-  cancel():void{
+  }
+  cancel(): void {
     this.router.navigate(['categories'])
   }
 
