@@ -17,8 +17,8 @@
 
   <mat-form-field class="form">
     <mat-label>Text</mat-label>
-    <input matInput [formControl]="text" required [(ngModel)]="book.text" type="text" name="text"
-      placeholder="The text of the book" maxlength="2000000" />
+    <textarea matInput [formControl]="text" required [(ngModel)]="book.text" type="text" name="text"
+      placeholder="The text of the book" maxlength="2000000"></textarea>
     <mat-error *ngIf="text.invalid">{{ getMessage("text") }}</mat-error>
   </mat-form-field>
 

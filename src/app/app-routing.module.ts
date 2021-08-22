@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookReadAllComponent } from './components/views/book/book-read-all/book-read-all.component';
 import { CreateBookComponent } from './components/views/book/create-book/create-book.component';
+import { DeleteBookComponent } from './components/views/book/delete-book/delete-book.component';
 import { UpdateBookComponent } from './components/views/book/update-book/update-book.component';
 import { CreateCategoryComponent } from './components/views/category/create-category/create-category.component';
 import { DeleteCategoryComponent } from './components/views/category/delete-category/delete-category.component';
@@ -41,7 +42,12 @@ const routes: Routes = [
   {
     path: 'categories/:id_cat/books/:id/update',
     component: UpdateBookComponent
+  },
+  {
+    path: 'categories/:id_cat/books/:id/delete',
+    component: DeleteBookComponent
   }
+
 
 ];
 
