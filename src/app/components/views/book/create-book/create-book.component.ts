@@ -61,7 +61,7 @@ export class CreateBookComponent implements OnInit {
     return false
   }
 
-  navigateToBooks(): void {
+  cancel(): void {
     this.router.navigate([`categories/${this.id_cat}/books`])
   }
 
